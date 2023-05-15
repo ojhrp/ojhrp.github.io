@@ -78,7 +78,7 @@ const Container = styled.main`
   -moz-osx-font-smoothing: grayscale;
 `;
 const Nav = styled.nav`
-  padding: 2rem 0 0 4rem;
+  padding: 3rem 0 3rem 0;
   text-align: center;
   h1 {
     font-size: 3rem;
@@ -112,7 +112,7 @@ const ListWrapper = styled.section`
 const List = styled.article`
   padding: 1rem;
   border: 1px solid #ccc;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   width: calc(100% - 2rem);
   margin: 1rem;
   h2 {
