@@ -37,11 +37,13 @@ function App() {
     { list } && (
       <Container>
         <Nav>
-          <h1>오지혜 교수님 애정합니다</h1>
+          <h1>오지혜 교수님 애정합니다😍</h1>
           <h2>SSAFY 9기 서울 8반 일동</h2>
-          <button type="button" onClick={handleClick}>
-            SHUFFLE
-          </button>
+          <div>
+            <button type="button" onClick={handleClick}>
+              SHUFFLE
+            </button>
+          </div>
         </Nav>
         <Main>
           <ListWrapper>
@@ -51,9 +53,9 @@ function App() {
                   <div>
                     <h2>{comment[1]}</h2>
                     <h3>
-                      {comment[3].trim().length > 0
-                        ? comment[3] + "(?)"
-                        : comment[2]}
+                      <span>
+                        {comment[3] ? comment[3] + "(?)" : comment[2]}
+                      </span>
                     </h3>
                   </div>
                 </List>
@@ -61,6 +63,9 @@ function App() {
             })}
           </ListWrapper>
         </Main>
+        <Footer>
+          <p>이 롤링페이퍼는 승윤이가 ♥︎을 담아 만들었습니다.</p>
+        </Footer>
       </Container>
     )
   );
@@ -74,17 +79,27 @@ const Container = styled.main`
 `;
 const Nav = styled.nav`
   padding: 2rem 0 0 4rem;
+  text-align: center;
   h1 {
     font-size: 3rem;
+    color: #fc0362;
   }
   button {
+    cursor: pointer;
+    font-size: 1.25rem;
     margin-top: 1rem;
-    padding: 0.35rem 0.5rem 0.35rem 0.5rem;
+    padding: 0.5rem 1.25rem 0.5rem 1.25rem;
     background-color: #333;
     border: none;
-    border-radius: 0.25rem;
+    border-radius: 2rem;
     color: white;
     font-weight: 700;
+  }
+  button:hover {
+    background-color: #fc0362;
+  }
+  button:active {
+    opacity: 0.75;
   }
 `;
 const Main = styled.div`
@@ -102,11 +117,24 @@ const List = styled.article`
   margin: 1rem;
   h2 {
     font-size: 1.75rem;
+    line-height: 150%;
   }
   h3 {
     font-size: 1.25rem;
+    margin-top: 1rem;
     font-weight: 400;
   }
+  h3 span {
+    font-weight: 700;
+    color: #fc0362;
+  }
 `;
-
+const Footer = styled.footer`
+  margin: 2rem 1rem 15rem 1rem;
+  text-align: center;
+  p {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+`;
 export default App;
