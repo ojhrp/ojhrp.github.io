@@ -37,7 +37,9 @@ function App() {
     { list } && (
       <Container>
         <Nav>
-          <h1>오지혜 교수님 애정합니다😍</h1>
+          <h1>
+            <a name="top"> 오지혜 교수님 애정합니다😍</a>
+          </h1>
           <h2>SSAFY 9기 서울 8반 일동</h2>
           <div>
             <button type="button" onClick={handleClick}>
@@ -65,6 +67,9 @@ function App() {
         </Main>
         <Footer>
           <p>이 롤링페이퍼는 승윤이가 ♥︎을 담아 만들었습니다.</p>
+          <p>
+            <a href="#top">위로 올라가기</a>
+          </p>
         </Footer>
       </Container>
     )
@@ -89,7 +94,7 @@ const Nav = styled.nav`
     font-size: 1.25rem;
     margin-top: 1rem;
     padding: 0.5rem 1.25rem 0.5rem 1.25rem;
-    background-color: #333;
+    background-color: #444;
     border: none;
     border-radius: 2rem;
     color: white;
@@ -101,6 +106,18 @@ const Nav = styled.nav`
   button:active {
     opacity: 0.75;
   }
+  @media screen and (max-width: 40rem) {
+    h1 {
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+    }
+    button {
+      font-size: 1rem;
+      padding: 0.5rem 1rem 0.5rem 1rem;
+    }
+  }
 `;
 const Main = styled.div`
   padding: 1rem 3rem 3rem 3rem;
@@ -108,25 +125,35 @@ const Main = styled.div`
 const ListWrapper = styled.section`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 const List = styled.article`
   padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 1rem;
   width: calc(100% - 2rem);
+  max-width: 40rem;
   margin: 1rem;
   h2 {
-    font-size: 1.75rem;
-    line-height: 150%;
+    font-size: 1.35rem;
+    line-height: 165%;
   }
   h3 {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     margin-top: 1rem;
     font-weight: 400;
   }
   h3 span {
     font-weight: 700;
     color: #fc0362;
+  }
+  @media screen and (max-width: 40rem) {
+    h2 {
+      font-size: 1.15rem;
+    }
+    h3 {
+      font-size: 1rem;
+    }
   }
 `;
 const Footer = styled.footer`
@@ -135,6 +162,7 @@ const Footer = styled.footer`
   p {
     font-size: 1.25rem;
     font-weight: 700;
+    margin-bottom: 1rem;
   }
 `;
 export default App;
